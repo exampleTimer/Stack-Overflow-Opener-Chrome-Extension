@@ -1,12 +1,12 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name":"Stack Overflow Opener",
     "description": "An extension that opens the first Stack Overflow link available(if present) when a question is searched on Google or Bing",
     "version" : "1.0",
     "background": {
-        "scripts": ["background.js"],
-        "persistent":false
+        "service_worker": "background.js"
     },
-    "permissions": ["webNavigation","https://www.google.com/*","https://www.bing.com/*"],
+    "permissions": ["webNavigation", "scripting", "activeTab"],
+    "host_permissions": ["https://www.google.com/*","https://www.bing.com/*", "https://stackoverflow.com/*"],
     "icons":{"128":"icon128.png"}
 }
